@@ -5,7 +5,7 @@ if [ "$1" != "" ]; then
 
     touch $1/run.lisp
     echo "#!/bin/zsh\n\nif [[ ! -f bootstrap.core ]] ; then\n  ./bootstrap\nfi\n\nsbcl --noinform --core bootstrap.core --load run.lisp" > $1/run
-    echo "(sb-ext:save-lisp-and-die \"bootstrap.core\")" > $1/bootstrap.lisp
+    echo ";; Put your dependant librariers here:\n;; (require :hunchentoot)\n;; (require :cl-who)\n\n(sb-ext:save-lisp-and-die \"bootstrap.core\")" > $1/bootstrap.lisp
     echo "sbcl --noinform --load bootstrap.lisp" > $1/bootstrap
     echo "vim *.lisp bootstrap run vim-all" > $1/vim-all
 
