@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+if [ "$1" != "" ]; then
+    mkdir $1
+
+    
+    echo "#include <stdlib.h>\n#include <stdio.h>\n#include <string.h>\n\nint main()\n{\n}\n" > $1/run.c
+    echo "gcc -std=c99 run.c && ./a.out" > $1/run
+    echo "vim *.c *.h run vim-all" > $1/vim-all
+
+    chmod 755 $1/run
+    chmod 755 $1/vim-all
+else
+    echo "mkdir-c: missing operand"
+fi
+

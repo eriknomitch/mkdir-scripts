@@ -1,0 +1,15 @@
+#!/bin/zsh
+
+if [ "$1" != "" ]; then
+    mkdir $1
+
+    touch $1/run.lisp
+    echo "sbcl-load run.lisp" > $1/run
+    echo "vim *.lisp run vim-all" > $1/vim-all
+
+    chmod 755 $1/run
+    chmod 755 $1/vim-all
+else
+    echo "mkdir-lisp: missing operand"
+fi
+

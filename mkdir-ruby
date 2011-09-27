@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+if [[ -z $1 ]] ; then
+    echo `basename $0`": missing directory argument"
+    return 1
+fi
+
+if [[ -e $1 ]] ; then
+    echo `basename $0`": file or directory already exists"
+    return 1
+fi
+
+mkdir $1
+
+echo "#!/usr/bin/ruby\n\n" >> $1/run.rb
+echo "./run.rb" > $1/run
+echo "vim *.rb run vim-all" > $1/vim-all
+
+chmod 755 $1/run.rb
+chmod 755 $1/run
+chmod 755 $1/vim-all
+

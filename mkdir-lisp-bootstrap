@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+if [ "$1" != "" ]; then
+    mkdir $1
+
+    touch $1/run.lisp
+    echo "#!/bin/zsh\n\nif [[ ! -f bootstrap.core ]] ; then\n  ./bootstrap\nfi\n\nsbcl --noinform --core bootstrap.core --load run.lisp" > $1/run
+    echo "(sb-ext:save-lisp-and-die \"bootstrap.core\")" > $1/bootstrap.lisp
+    echo "sbcl --noinform --load bootstrap.lisp" > $1/bootstrap
+    echo "vim *.lisp bootstrap run vim-all" > $1/vim-all
+
+    chmod 755 $1/run
+    chmod 755 $1/bootstrap
+    chmod 755 $1/vim-all
+else
+    echo "mkdir-lisp: missing operand"
+fi
+
