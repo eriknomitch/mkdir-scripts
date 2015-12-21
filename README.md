@@ -14,6 +14,11 @@ Creates:
 * `|--- run.rb` - The main Ruby source file for editing
 * `|--- run` - A Zsh script to run `run.rb`
 
+```Shell
+$ cd foo
+$ ./run # Executes run.rb
+```
+
 ### Tip
 
 Make an alias to run: `alias r="./run"`
