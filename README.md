@@ -14,3 +14,10 @@ Creates:
 * `|--- run.rb` - The main Ruby source file for editing
 * `|--- run` - A Zsh script to run `run.rb`
 
+## Languages
+
+* Ruby
+* C
+* Lisp
+* Python
+

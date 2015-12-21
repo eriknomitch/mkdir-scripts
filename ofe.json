@@ -1,7 +1,8 @@
 {
   "default": {
     "extensions": [".md"],
-    "files": ["bin/*"]
+    "files": ["bin/*"],
+    "first_file": "README.md"
   },
   "docs": {
     "extensions": [".md"],
