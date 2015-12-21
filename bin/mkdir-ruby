@@ -12,7 +12,7 @@ fi
 
 mkdir $1
 
-echo "#!/usr/bin/ruby\n\n" >> $1/run.rb
+echo "#!/usr/bin/env ruby\n\n" >> $1/run.rb
 echo "./run.rb" > $1/run
 echo "vim *.rb run vim-all" > $1/vim-all
 
