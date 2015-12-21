@@ -6,18 +6,18 @@ mkdir-scripts contains a few simple ZSH scripts to create a basic directory of f
 
 ### Example
 
-`$ mkdir-ruby foo`
+```Shell
+$ mkdir-ruby foo
+$ cd foo
+$ ./run # Executes run.rb
+```
 
-Creates:
+The initial `mkdir-ruby` command will have created:
 
 * `./foo/`
 * `|--- run.rb` - The main Ruby source file for editing
 * `|--- run` - A Zsh script to run `run.rb`
 
-```Shell
-$ cd foo
-$ ./run # Executes run.rb
-```
 
 ### Tip
 
